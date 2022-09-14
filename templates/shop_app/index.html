@@ -1,0 +1,580 @@
+{% extends '_partials/base.html'%}
+{% load static %}
+
+{% block content %}
+
+
+        <!--Preloader starts-->
+         <div class="preloader js-preloader">
+            <img src="{% static 'assets/img/preloader.gif' %}" alt="Image">
+        </div>
+        <!--Preloader ends-->
+
+        <div class="body_overlay"></div>
+
+        <!-- Page Wrapper End -->
+        <div class="page-wrapper">
+
+            <!-- Header Section Start -->
+            {% include "_partials/header.html"%}
+            <!-- Header Section End -->
+
+           <!-- Hero Section Start -->
+           <section class="hero-wrap style3">
+            <img src="{% static 'assets/img/hero/hero-shape-9.png' %}" alt="Image" class="hero-shape-one moveHorizontal">
+            <img src="{% static 'assets/img/hero/hero-shape-10.png' %}" alt="Image" class="hero-shape-two moveVertical">
+            <img src="{% static 'assets/img/hero/hero-shape-11.png' %}" alt="Image" class="hero-shape-three">
+            <div class="container">
+               <div class="row">
+                   <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+                    <div class="hero-content">
+                        <h1 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">Muva Medical Marijuanna Product Store</h1>
+                        <p data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">Ontrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard</p>
+                        <a href="shop-right-sidebar.html" class="btn style1" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">Shop Now</a>
+                    </div>
+                   </div>
+               </div>
+            </div>
+        </section>
+        <!-- Hero Section End -->
+
+        <!-- Product Slider Start -->
+        <div class="product-slider-wrap">
+            <div class="container">
+                <div class="product-slider-one owl-carousel">
+                    <div class="product-card style4">
+                        <div class="product-img">
+                            <img src="{% static 'assets/img/product/product-13.jpg' %}" alt="Image">
+                            <button type="button" class="btn style2 add-cart">Add To Cart</button>
+                        </div>
+                        <div class="product-info-wrap">
+                           <div class="product-info">
+                                <h3><a href="shop-details.html">CBD Cookies</a></h3>
+                                <p class="price">$138.00</p>
+                           </div>
+                           <a href="shop-right-sidebar.html" class="btn style1">Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="product-card style4">
+                        <div class="product-img">
+                            <img src="{% static 'assets/img/product/product-15.jpg' %}" alt="Image">
+                            <button type="button" class="btn style2 add-cart">Add To Cart</button>
+                        </div>
+                        <div class="product-info-wrap">
+                           <div class="product-info">
+                                <h3><a href="shop-details.html">Cannabis Oil</a></h3>
+                                <p class="price">$89.00 <span class="discount">$120.00</span></p>
+                           </div>
+                           <a href="shop-right-sidebar.html" class="btn style1">Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="product-card style4">
+                        <div class="product-img">
+                            <img src="{% static 'assets/img/product/product-16.jpg' %}" alt="Image">
+                            <button type="button" class="btn style2 add-cart">Add To Cart</button>
+                        </div>
+                        <div class="product-info-wrap">
+                           <div class="product-info">
+                                <h3><a href="shop-details.html">Cannabis Gummy</a></h3>
+                                <p class="price">$89.00 </p>
+                           </div>
+                           <a href="shop-right-sidebar.html" class="btn style1">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Product Slider End -->
+
+           
+            
+            <!-- About Section Start -->
+            <section class="about-wrap style1 bg-albastor ptb-100">
+                <img src="{% static 'assets/img/about/about-shape-1.png' %}" alt="Image" class="about-shape-one moveVertical sm-none">
+                <img src="{% static 'assets/img/about/about-shape-2.png' %}" alt="Image" class="about-shape-two waving_left sm-none">
+                <div class="container">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200">
+                            <div class="about-img-wrap">
+                                <img src="{% static 'assets/img/about/about-img-1.png' %}" alt="Image">
+                            </div>
+                        </div>
+                        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
+                            <div class="about-content">
+                                <div class="content-title style1">
+                                    <span><img src="{% static 'assets/img/section-img.png' %}" alt="Image">About Our Dispensary</span>
+                                    <h2>We Provide High Quality And Certified Products</h2>
+                                    <h6>All the Lorem Ipsum generators on the Internet tend to repeat defined chunks making this the first true generator on Internet.</h6>
+                                    <p>There are many variations of passages of Lorem Ipsum available, bhe mred aln ine form, by injected humour, or randomised words which don't look even slilievable. If youre going to use a passage of lorem.</p>
+                                </div>
+                                <a href="about.html" class="btn style1">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About Sectin End -->
+            
+            <!-- Product Section Start -->
+            
+            <!-- Product Section End -->
+
+            <!-- Product Offser Section Start -->
+            <section class="offer-wrap ptb-100">
+                <img src="{% static 'assets/img/shape-8.png' %}" alt="Image" class="offer-shape-one moveVertical sm-none">
+                <img src="{% static 'assets/img/shape-9.png' %}" alt="Image" class="offer-shape-two animationFramesTwo">
+                <div class="container">
+                    <img src="{% static 'assets/img/shape-10.png' %}" alt="Image" class="offer-shape-three sm-none">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-lg-6 order-lg-1 order-md-2 order-2" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200">
+                            <div class="offer-content">
+                                <div class="content-title style1">
+                                    <span><img src="{% static 'assets/img/section-img.png' %}" alt="Image">Best Offer</span>
+                                    <h2>Muva Marijuanna Best Offer For Our Customers</h2>
+                                    <p>There are many variations of passages of Lorem Ipsum available, bhe mred aln ine form, by injected humour, or randomised words which don't look even slilievable. If youre going to use a passage of Lorem Ipsum, you  to be sure there isn't anything </p>
+                                </div>
+                                <div class="countdown-deals text-center" data-countdown="2023/12/11"></div>
+                                <a href="shop-right-sidebar.html" class="btn style1">Shop Now</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 order-lg-2 order-md-1 order-1" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
+                            <div class="offer-pproduct-slider owl-carousel">
+                                <div class="product-slide-item">
+                                    <div class="discout">
+                                        <span>15%</span> Off
+                                    </div>
+                                    <span class="product-offer-price">$130</span>
+                                    <img src="{% static 'assets/img/product/offer-slider-1.jpg' %}" alt="Image">
+                                </div>
+                                <div class="product-slide-item">
+                                    <div class="discout">
+                                        <span>10%</span> Off
+                                    </div>
+                                    <span class="product-offer-price">$110</span>
+                                    <img src="{% static 'assets/img/product/offer-slider-2.jpg' %}" alt="Image">
+                                </div>
+                                <div class="product-slide-item">
+                                    <div class="discout">
+                                        <span>25%</span> Off
+                                    </div>
+                                    <span class="product-offer-price">$89</span>
+                                    <img src="{% static 'assets/img/product/offer-slider-3.jpg' %}" alt="Image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Product Offser Section End -->
+
+            <!-- Service Section Start -->
+            <section class="service-wrap style1 pt-100 pb-75 bg-albastor">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+                            <div class="section-title style1 text-center mb-40">
+                                <span><img src="{% static 'assets/img/section-img.png' %}" alt="Image">Our Services</span>
+                                <h2>Our Best Marijuanna Services</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-lg-4">
+                            <div class="service-card style1" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200">
+                                <div class="service-icon">
+                                   <i class="flaticon-meditation"></i>
+                                </div>
+                                <div class="service-info">
+                                    <h3><a href="service-details.html">Promote Relaxation</a></h3>
+                                    <p>Sed ut perspiciatis unde omnis is natus error sit voluptatem accus.</p>
+                                </div>
+                            </div>
+                            <div class="service-card style1" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="300">
+                                <div class="service-icon">
+                                   <i class="flaticon-massage"></i>
+                                </div>
+                                <div class="service-info">
+                                    <h3><a href="service-details.html">Remove Headache</a></h3>
+                                    <p>Sed ut perspiciatis unde omnis is natus error sit voluptatem accus.</p>
+                                </div>
+                            </div>
+                            <div class="service-card style1" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="400">
+                                <div class="service-icon">
+                                   <i class="flaticon-herbal"></i>
+                                </div>
+                                <div class="service-info">
+                                    <h3><a href="service-details.html">Increase Appetite</a></h3>
+                                    <p>Sed ut perspiciatis unde omnis is natus error sit voluptatem accus.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="service-img-wrap" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+                                <img src="{% static 'assets/img/service/service-img-1.png' %}" alt="Image">
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="service-card style1" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
+                                <div class="service-icon">
+                                    <i class="flaticon-back-1"></i>
+                                </div>
+                                <div class="service-info">
+                                    <h3><a href="service-details.html">Relieves Pain</a></h3>
+                                    <p>Sed ut perspiciatis unde omnis is natus error sit voluptatem accus </p>
+                                </div>
+                            </div>
+                            <div class="service-card style1" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="300">
+                                <div class="service-icon">
+                                   <i class="flaticon-time-to-sleep"></i>
+                                </div>
+                                <div class="service-info">
+                                    <h3><a href="service-details.html">Fights Insomnia</a></h3>
+                                    <p>Sed ut perspiciatis unde omnis is natus error sit voluptatem accus.</p>
+                                </div>
+                            </div>
+                            <div class="service-card style1" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="400">
+                                <div class="service-icon">
+                                   <i class="flaticon-cat"></i>
+                                </div>
+                                <div class="service-info">
+                                    <h3><a href="service-details.html">Improves Mood</a></h3>
+                                    <p>Sed ut perspiciatis unde omnis is natus error sit voluptatem accus.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Service Section End -->
+
+            <!-- CTA  Section Start -->
+            <div class="cta-wrap pt-100 pb-75">
+                <div class="cta-shape">
+                    <img src="{% static 'assets/img/counter-shape-1.png' %}" alt="Image">
+                </div>
+                <div class="container">
+                    <div class="counter-card-wrap  pb-75">
+                        <div class="counter-card">
+                            <div class="counter-text">
+                                <div class="counter-num">
+                                    <span class="odometer" data-count="37"></span>
+                                </div>
+                                <p>Awarded Licenses In Fourteen Atates </p>
+                            </div>
+                        </div>
+                        <div class="counter-card">
+                            <div class="counter-text">
+                                <div class="counter-num">
+                                    <span class="odometer" data-count="768"></span>
+                                </div>
+                                <p>Cultivation Space Have been Built</p>
+                            </div>
+                        </div>
+                        <div class="counter-card">
+                            <div class="counter-text">
+                                <div class="counter-num">
+                                    <span class="odometer" data-count="68"></span>
+                                </div>
+                                <p>Tons On Sale Product Available</p>
+                            </div>
+                        </div>
+                        <div class="counter-card">
+                            <div class="counter-text">
+                                <div class="counter-num">
+                                    <span class="odometer" data-count="2389"></span>
+                                </div>
+                                <p>Percent Growth In The Last Tow Years</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 order-lg-1 order-md-2 order-2" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+                            <div class="apply-form">
+                                <div class="content-title style1">
+                                    <h2>Apply For Treatment</h2>
+                                    <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms.</p>
+                                </div>
+                                <form action="#">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="number" placeholder="Phone">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Subject">
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn style1 w-100 d-block">Submit Application</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 order-lg-2 order-md-1 order-1" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+                            <div class="video-wrap bg-f video-bg-1">
+                                <a class="play-now" data-fancybox="" href="https://www.youtube.com/watch?v=UNSSuTSQI9I">
+                                    <i class="ri-play-fill"></i>
+                                    <span class="ripple"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-100 justify-content-center">
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+                            <div class="promo-card style1">
+                                <div class="promo-title">
+                                    <span class="promo-icon">
+                                        <i class="flaticon-herbal-2"></i>
+                                    </span>
+                                    <h3>Best Herbs</h3>
+                                </div>
+                                <p>There are many variaties of rem amet consec but the major have suffered alteration in some case. </p>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
+                            <div class="promo-card style1">
+                                <div class="promo-title">
+                                    <span class="promo-icon">
+                                        <i class="flaticon-medicine"></i>
+                                    </span>
+                                    <h3>Best Product</h3>
+                                </div>
+                                <p>There are many variaties of rem amet consec but the major have suffered alteration in some case. </p>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
+                            <div class="promo-card style1">
+                                <div class="promo-title">
+                                    <span class="promo-icon">
+                                        <i class="flaticon-shipped"></i>
+                                    </span>
+                                    <h3>Home Delivery</h3>
+                                </div>
+                                <p>There are many variaties of rem amet consec but the major have suffered alteration in some case. </p>
+                            </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="500">
+                            <div class="promo-card style1">
+                                <div class="promo-title">
+                                    <span class="promo-icon">
+                                        <i class="flaticon-bong"></i>
+                                    </span>
+                                    <h3>Bong Medical</h3>
+                                </div>
+                                <p>There are many variaties of rem amet consec but the major have suffered alteration in some case. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- CTA Section End -->
+
+            <!-- Feature Section Start -->
+            <section class="feature-wrap style1 pb-100">
+                <img src="{% static 'assets/img/about/feature-shape-1.png' %}" alt="Image" class="feature-shape-one">
+                <img src="{% static 'assets/img/about/feature-shape-2.png' %}" alt="Image" class="feature-shape-two">
+                <div class="container">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-lg-6">
+                            <div class="feature-img-wrap">
+                                <img src="{% static 'assets/img/about/feature-img-1.png' %}" alt="Image">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="feature-content">
+                                <div class="content-title style1">
+                                    <span><img src="{% static 'assets/img/section-img.png' %}" alt="Image">Recetional Medicine</span>
+                                    <h2>Medical Marijuana Is Used To Many Health Problems</h2>
+                                    <h6>All the Lorem Ipsum generators on the Internet tend to repeat defined chunks making this the first true generator on Internet.</h6>
+                                    <p>There are many variations of passages of Lorem Ipsum available, bhe mred aln ine form, by injected humour, or randomised words which don't look even slilievable. If youre going to use a passage of lorem.</p>
+                                </div>
+                                <a href="about.html" class="btn style1 mt-30">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Feature Sectin End -->
+
+            <!-- Newsletter Section Start -->
+            <section class="newsletter-wrap ptb-100">
+                <img src="{% static 'assets/img/newsletter-shape-1.png' %}" alt="Image" class="newsletter-shape-one">
+                <img src="{% static 'assets/img/newsletter-shape-2.png' %}" alt="Image" class="newsletter-shape-two moveHorizontal">
+                <img src="{% static 'assets/img/newsletter-shape-3.png' %}" alt="Image" class="newsletter-shape-three animationFramesTwo">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div class="content-title style2">
+                                <span><img src="{% static 'assets/img/section-img.png' %}" alt="Image">Newsletter</span>
+                                <h2>Subscribe To Newsletter</h2>
+                                <p>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks making this the first true generator consect.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <form action="#" class="newsletter-form">
+                                <input type="email" placeholder="Enter Your Email Address">
+                                <button type="submit">Subscribe Now</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Newsletter Section End -->
+
+             <!-- Testimonial Section Start -->
+             <section class="benefit-wrap style2 ptb-100">
+                <div class="container">
+                    <div class="section-title style1 text-center mb-40">
+                        <span><img src="{% static 'assets/img/section-img.png' %}" alt="Image">Benefit You'll Get</span>
+                        <h2>Health Benefit Of CBD Oils</h2>
+                    </div>
+                    <div class="row gx-5">
+                        <div class="col-lg-3">
+                            <div class="benefit-card style1">
+                                <h3>Heart</h3>
+                                 <p>There are many variations of passages of Lorem Ipsum available mred aln ine form.</p>
+                            </div>
+                            <div class="benefit-card style1">
+                                <h3>Brains</h3>
+                                 <p>There are many variations of passages of Lorem Ipsum available mred aln ine form.</p>
+                            </div>
+                            <div class="benefit-card style1">
+                                <h3>Eyes</h3>
+                                <p>There are many variations of passages of Lorem Ipsum available mred aln ine form.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="benefit-img-wrap">
+                                <img class="bn-img" src="{% static 'assets/img/about/benefit-2.png' %}" alt="Image">
+                                <ul class="benefit-list-icon list-style">
+                                    <li>
+                                        <img src="{% static 'assets/img/about/arrow-1.png' %}" alt="Image" class="bn-shape-arrow">
+                                        <img src="{% static 'assets/img/about/shape-1.png' %}" alt="Image" class="bn-shape">
+                                        <i class="flaticon-witness"></i>
+                                    </li>
+                                    <li>
+                                        <img src="{% static 'assets/img/about/arrow-2.png' %}" alt="Image" class="bn-shape-arrow">
+                                        <img src="{% static 'assets/img/about/shape-2.png' %}" alt="Image" class="bn-shape">
+                                        <i class="flaticon-brain"></i>
+                                    </li>
+                                    <li>
+                                        <img src="{% static 'assets/img/about/arrow-3.png' %}" alt="Image" class="bn-shape-arrow">
+                                        <img src="{% static 'assets/img/about/shape-3.png' %}" alt="Image" class="bn-shape">
+                                        <i class="flaticon-heartbeat"></i>
+                                    </li>
+                                    <li>
+                                        <img src="{% static 'assets/img/about/arrow-4.png' %}" alt="Image" class="bn-shape-arrow">
+                                        <img src="{% static 'assets/img/about/shape-4.png' %}" alt="Image" class="bn-shape">
+                                        <i class="flaticon-lungs"></i>
+                                    </li>
+                                    <li>
+                                        <img src="{% static 'assets/img/about/arrow-5.png' %}" alt="Image" class="bn-shape-arrow">
+                                        <img src="{% static 'assets/img/about/shape-5.png' %}" alt="Image" class="bn-shape">
+                                        <i class="flaticon-stomach"></i>
+                                    </li>
+                                    <li>
+                                        <img src="{% static 'assets/img/about/arrow-6.png' %}" alt="Image" class="bn-shape-arrow">
+                                        <img src="{% static 'assets/img/about/shape-6.png' %}" alt="Image" class="bn-shape">
+                                        <i class="flaticon-ribbon"></i>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="benefit-card">
+                                <h3>Asthma</h3>
+                                 <p>There are many variations of passages of Lorem Ipsum available mred aln ine form.</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h3>Stomach</h3>
+                                <p>There are many variations of passages of Lorem Ipsum available mred aln ine form.</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h3>Cancer</h3>
+                                 <p>There are many variations of passages of Lorem Ipsum available mred aln ine form.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Testimonial Section End -->
+
+            <!-- Blog Section Start -->
+            <section class="blog-wrap pt-100 pb-75">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
+                            <div class="section-title style1 text-center mb-40">
+                                <span><img src="{% static 'assets/img/section-img.png' %}" alt="Image">Our blog</span>
+                                <h2>Natest News &amp; Articles</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-xl-4 col-lg-6 col-md-6" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+                            <div class="blog-card style1">
+                                <div class="blog-img">
+                                    <img src="{% static 'assets/img/blog/blog-1.jpg' %}" alt="Image">
+                                </div>
+                                <div class="blog-info">
+                                    <h3><a href="blog-details-right-sidebar.html">How Do I Access Medical  Cannabis Prescription</a></h3>
+                                    <p>On the other hand, we denounce with riindi gnation and dislike men who are.</p>
+                                    <a href="blog-details-right-sidebar.html" class="link style1">Read More</a>
+                                </div>
+                                <ul class="blog-metainfo  list-style">
+                                    <li><i class="ri-calendar-2-line"></i><a href="posts-by-date.html">22 Jun, 2022</a></li>
+                                    <li><i class="ri-chat-3-line"></i>No Comment</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-md-6" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="300">
+                            <div class="blog-card style1">
+                                <div class="blog-img">
+                                    <img src="{% static 'assets/img/blog/blog-2.jpg' %}" alt="Image">
+                                </div>
+                                <div class="blog-info">
+                                    <h3><a href="blog-details-right-sidebar.html">Use Of Medical Cannabis In  Improving Symptoms</a></h3>
+                                    <p>On the other hand, we denounce with riindi gnation and dislike men who are.</p>
+                                    <a href="blog-details-right-sidebar.html" class="link style1">Read More</a>
+                                </div>
+                                <ul class="blog-metainfo  list-style">
+                                    <li><i class="ri-calendar-2-line"></i><a href="posts-by-date.html">13 Jun, 2022</a></li>
+                                    <li><i class="ri-chat-3-line"></i>No Comment</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-md-6" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
+                            <div class="blog-card style1">
+                                <div class="blog-img">
+                                    <img src="{% static 'assets/img/blog/blog-3.jpg' %}" alt="Image">
+                                </div>
+                                <div class="blog-info">
+                                    <h3><a href="blog-details-right-sidebar.html">A Guide For Natural And  Sustainable Beauty Routine</a></h3>
+                                    <p>On the other hand, we denounce with riindi gnation and dislike men who are.</p>
+                                    <a href="blog-details-right-sidebar.html" class="link style1">Read More</a>
+                                </div>
+                                <ul class="blog-metainfo  list-style">
+                                    <li><i class="ri-calendar-2-line"></i><a href="posts-by-date.html">15 May, 2022</a></li>
+                                    <li><i class="ri-chat-3-line"></i>No Comment</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Blog Section End -->
+            
+            <!-- Footer Section Start -->
+            {% include "_partials/footer.html"%}
+            <!-- Footer Section End -->
+        
+        </div>
+        <!-- Page Wrapper End -->
+        
+        <!-- Back-to-top button Start -->
+         <a href="javascript:void(0)" class="back-to-top bounce"><i class="ri-arrow-up-s-line"></i></a>
+        <!-- Back-to-top button End -->
+        {% endblock content %}
