@@ -17,7 +17,7 @@
                         <div class="breadcrumb-title">
                             <h2>Cart</h2>
                             <ul class="breadcrumb-menu list-style">
-                                <li><a href="index.html">Home </a></li>
+                                <li><a href={% url 'home' %}>Home </a></li>
                                 <li>Cart</li>
                             </ul>
                         </div>
@@ -54,7 +54,7 @@
                                                             </div>
                                                         </td>
                                                         <td>
-                                                            <a class="cart-item" href="shop-details.html">
+                                                            <a class="cart-item" href={% url 'product_detail' %}>
                                                                 <span>CBD Formula Oil</span>
                                                             </a>
                                                         </td>
@@ -92,7 +92,7 @@
                                                             </div>
                                                         </td>
                                                         <td>
-                                                            <a class="cart-item" href="shop-details.html">
+                                                            <a class="cart-item" href={% url 'product_detail' %}>
                                                                 <span>CBD Face Cream</span>
                                                             </a>
                                                         </td>
@@ -159,7 +159,7 @@
                                                     <span><b>$450</b></span>
                                                 </div>
                                             </div>
-                                            <a href="checkout.html" class="btn style1 d-block w-100">Proceed To Checkout</a>
+                                            <a href={% url 'checkout' %} class="btn style1 d-block w-100">Proceed To Checkout</a>
                                         </div>
                                     </div>
                                 </div>

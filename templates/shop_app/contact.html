@@ -12,7 +12,7 @@
                         <div class="breadcrumb-title">
                             <h2>Contact</h2>
                             <ul class="breadcrumb-menu list-style">
-                                <li><a href="index.html">Home </a></li>
+                                <li><a href={% url 'home' %}>Home </a></li>
                                 <li>Contact</li>
                             </ul>
                         </div>
@@ -102,7 +102,7 @@
                                                             required
                                                         >
                                                         <label class="form-check-label" for="gridCheck">
-                                                            I agree to the <a class="link style1" href="terms-of-service.html">Terms &amp; Conditions</a> and <a class="link style1" href="privacy-policy.html">Privacy Policy</a>
+                                                            I agree to the <a class="link style1" href={% url 'terms' %}>Terms &amp; Conditions</a> and <a class="link style1" href="privacy-policy.html">Privacy Policy</a>
                                                         </label>
                                                         <div class="help-block with-errors gridCheck-error"></div>
                                                     </div>
