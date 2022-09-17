@@ -21,7 +21,7 @@ class Product(models.Model):
     short_description=models.TextField(max_length=200,null=False,blank=False)
     long_description=models.TextField(max_length=200,null=False,blank=False)
     category=models.ForeignKey('Category', on_delete=models.CASCADE,null=False)
-    tags = models.ManyToManyField(Tag,null=True,blank=True)
+    tags = models.ManyToManyField(Tag,blank=True)
 
     def get_product_code(self):
         return f'AE-{223}'
