@@ -50,12 +50,7 @@ def login_user(request):
         email = request.POST.get("email")
         password = request.POST.get("password")
 
-        try:
-            user = authenticate(request,username=email,password=password)
-            print(user)
-        except Exception as err:
-            print(err)
-
+        user = authenticate(request,username=email,password=password)
         # if not user.is_email_verified:
         #     messages.add_message(request,messages.ERROR, "Email not verified")
         #     return render(request,'auth_app/login.html',context)
