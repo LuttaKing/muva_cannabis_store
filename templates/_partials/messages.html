@@ -1,0 +1,14 @@
+{% if messages%}
+
+{%for message in messages%}
+<div class="alert alert-primary" role="alert">
+    {{message}}
+  </div>
+<!-- <div class="notification is-{{message.tags}}">
+    
+   
+  </div> -->
+
+{%endfor%}
+
+{%endif%}
