@@ -129,7 +129,7 @@
                                             </div>
                                             <div class="product-info">
                                                 <p class="price">${{product.price}} <span class="discount">$0.00</span></p>
-                                                <h3><a href={% url 'product_detail' %}>{{product.name}}</a></h3>
+                                                <h3><a href={% url 'product_detail' product.id %}>{{product.name}}</a></h3>
                                                 <ul class="ratings list-style">
                                                     <li><i class="ri-star-fill"></i></li>
                                                     <li><i class="ri-star-fill"></i></li>

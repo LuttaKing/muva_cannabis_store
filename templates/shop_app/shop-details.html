@@ -36,9 +36,9 @@
                                     <div class="swiper-container single-product-slider">
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide single-product-item">
-                                                <img src="{% static 'assets/img/product/single-product-1.jpg' %}" />
+                                                <img src="{{product.product_image.url}}" />
                                             </div>
-                                            <div class="swiper-slide single-product-item">
+                                            <!-- <div class="swiper-slide single-product-item">
                                                 <img src="{% static 'assets/img/product/single-product-2.jpg' %}" />
                                             </div>
                                             <div class="swiper-slide single-product-item">
@@ -46,7 +46,7 @@
                                             </div>
                                             <div class="swiper-slide single-product-item">
                                                 <img src="{% static 'assets/img/product/single-product-4.jpg' %}" />
-                                            </div>
+                                            </div> -->
                                         </div>
                                         <div class="swiper-button-next"><i class="ri-arrow-right-s-line"></i></div>
                                         <div class="swiper-button-prev"><i class="ri-arrow-left-s-line"></i></div>
@@ -72,8 +72,8 @@
                             <div class="col-lg-6">
                                 <div class="single-product-details">
                                     <div class="single-product-title">
-                                        <h2>Malfor CBD Essential</h2>
-                                        <h3><span>$350</span> <span class="discount">$450</span></h3>
+                                        <h2>{{product.name}}</h2>
+                                        <h3><span>${{product.price}}</span> <span class="discount">$0.00</span></h3>
                                         <div class="ratings">
                                             <ul class="list-style">
                                                 <li><i class="ri-star-fill"></i></li>
@@ -82,33 +82,32 @@
                                                 <li><i class="ri-star-fill"></i></li>
                                                 <li><i class="ri-star-fill"></i></li>
                                             </ul>
-                                            <span>(12 customer review)</span>
+                                            <span>( product rating)</span>
                                         </div>
                                     </div>
-                                    <p class="single-product-desc">
-                                        On the other hand, we denounce with righteous indignation and dislike men 
-                                        so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble. 
+                                    <p class="single-product-desc">{{product.short_description}}
                                     </p>
                                     <div class="product-more-option">
                                         <div class="product-more-option-item">
                                             <h5>Category :</h5>
-                                            <a href="#">Cannabies</a>
+                                            {% for category in product.category.all %} <a href="#">{{ category.name }},</a> {% endfor %}
                                         </div>
                                         <div class="product-more-option-item">
-                                            <h5>Product Capacity :</h5>
-                                            <span>50 ml</span>
-                                        </div>
-                                        <div class="product-more-option-item">
-                                            <h5>Product Code :</h5>
-                                            <span>AE-009</span>
+                                            <h5>S.K.U :</h5>
+                                            <span>{{ product.get_product_code }}SK</span>
                                         </div>
                                         <div class="product-more-option-item">
                                             <h5>Availability :</h5>
                                             <span>In Stock</span>
                                         </div>
                                         <div class="product-more-option-item">
+                                            <h5>Product Code :</h5>
+                                            <span>AE-{{ product.get_product_code }}</span>
+                                        </div>
+                                       
+                                        <div class="product-more-option-item">
                                             <h5>Tag :</h5>
-                                            <a href="#">Medicine</a>,<a href="#">Health</a>
+                                            {% for tag in product.tags.all %} <a href="#">{{ tag.name }},</a> {% endfor %}
                                         </div>
                                     </div>
                                     <div class="product-more-option-item">
@@ -144,32 +143,27 @@
                                 <div class="tab-content product-tab-content">
                                     <div class="tab-pane fade show active" id="tab_1" role="tabpanel">
                                         <div class="product_desc">
-                                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occacupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum. </p>
-                                            <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis d repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized bcharms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that.</p>
+                                            {{product.long_description}}
+
+                                           
                                             <ul class="content-feature-list style1 list-style mt-15 mb-0">
+
+                                                {% for tag in product.tags.all %} 
                                                 <li><i class="ri-record-circle-fill"></i>
-                                                    Lorem ipsum dolor, sit amet.
+                                                    {{ tag.name }}
                                                 </li>
-                                                <li><i class="ri-record-circle-fill"></i>
-                                                    Amet consectetur adipisicing elit Officia.
-                                                </li>
-                                                <li><i class="ri-record-circle-fill"></i>
-                                                    Aquaerat ipsa quis possimus.
-                                                </li>
-                                                <li><i class="ri-record-circle-fill"></i>
-                                                    Lorem aquaerat ipsa quis possimus.
-                                                </li>
-                                                <li><i class="ri-record-circle-fill"></i>
-                                                     Consectetur Amet adipisicing elit Officia.
-                                                </li>
+                                                {% endfor %}
+
+                                             
+
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="tab_2" role="tabpanel">
                                         <ul class="product_features list-style">
-                                            <li><b>Brand:</b> Maford</li>
-                                           <li><b>Quantity:</b> 50ml</li>
-                                           <li><b>Validity :</b> 24 Months</li>
+                                            <li><b>Categories:</b>   {% for category in product.category.all %} <a href="#">{{ category.name }},</a> {% endfor %}</li>
+                                           <li><b>Tags:</b> {% for tag in product.tags.all %} <a href="#">{{ tag.name }},</a> {% endfor %}</li>
+                                           
                                         </ul>
                                     </div>
                          ///       
@@ -202,35 +196,14 @@
                                             <button type="button" class="btn style2 add-cart">Add To Cart</button>
                                         </div>
                                         <div class="product-info">
-                                            <h3><a href={% url 'product_detail' %}>Cannabis Oil</a></h3>
+                                            <h3><a href={% url 'home' %}>Cannabis Oil</a>
+                                            </h3>
                                             <p class="price">$89.00 <span class="discount">$120.00</span></p>
                                         </div>
                                     </div>
                             </div>
-                            <div class="col-xl-4 col-lg-6 col-md-6">
-                                    <div class="product-card style2">
-                                        <div class="product-img">
-                                            <img src="{% static 'assets/img/product/product-2.jpg' %}" alt="Image">
-                                            <button type="button" class="btn style2 add-cart">Add To Cart</button>
-                                        </div>
-                                        <div class="product-info">
-                                            <h3><a href={% url 'product_detail' %}>Critical Kush</a></h3>
-                                            <p class="price">$89.00</p>
-                                        </div>
-                                    </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-md-6">
-                                <div class="product-card style2">
-                                    <div class="product-img">
-                                        <img src="{% static 'assets/img/product/product-3.jpg' %}" alt="Image">
-                                        <button type="button" class="btn style2 add-cart">Add To Cart</button>
-                                    </div>
-                                    <div class="product-info">
-                                        <h3><a href={% url 'product_detail' %}>Elphabes Bliss</a></h3>
-                                        <p class="price">$79.00 <span class="discount">$80.00</span></p>
-                                    </div>
-                                </div>
-                            </div>
+                         
+                       
                         </div>
                     </div>
                 </section>

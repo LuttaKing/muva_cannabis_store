@@ -1,4 +1,5 @@
 from django.db import models
+from random import randint
 
 
 class Category(models.Model):
@@ -25,7 +26,7 @@ class Product(models.Model):
     is_featured =models.BooleanField(default=False)
 
     def get_product_code(self):
-        return f'AE-{223}'
+        return randint(101,999)
 
     def __str__(self):
         return self.name

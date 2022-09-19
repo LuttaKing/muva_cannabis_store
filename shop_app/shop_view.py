@@ -1,4 +1,3 @@
-
 from .models import Category,Tag,Product
 from django.core.paginator import Paginator
 from django.shortcuts import render
@@ -50,7 +49,7 @@ def shop(request):
     'all_products':filter_products(request),
     
     }
-    return render(request,'shop_app/shop-left-sidebar.html',context)
+    return render(request,'shop_app/shop.html',context)
 
 def search(request):
     page = request.GET.get('page', 1)
@@ -79,7 +78,7 @@ def search(request):
                 'all_products':productx,
                 
                 }
-        return render(request,'shop_app/shop-left-sidebar.html',context)
+        return render(request,'shop_app/shop.html',context)
     else:
 
         context = {  
@@ -88,4 +87,4 @@ def search(request):
             'all_products':filter_products(request),
             
             }
-        return render(request,'shop_app/shop-left-sidebar.html',context)
+        return render(request,'shop_app/shop.html',context)
