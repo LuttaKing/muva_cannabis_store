@@ -38,11 +38,17 @@
                                         </div>
                                     </div>
                                     <div class="sidebar-widget range-slider">
-                                        <h4>Price Filter</h4>
-                                        <div class="form-group">
-                                            <div id="slider-range" class="price-range mar-bot-20"></div>
-                                            <label for="price-range">Price:</label>
-                                            <input type="text" id="amount">
+                                        <h4>Clear Filters</h4>
+                                        <div class="tag-list">
+                                            <ul class="list-style">
+                                                
+                                                <li>
+                                                    <li><a href="{% url 'shop' %}">Clear Filters</a></li>
+                                                    <button type="submit"><i class="flaticon-invisible"></i></button>
+                                                    
+                                                    <!-- <li><a href="?filter_tag={{tag.name}}">{{tag.name}}</a></li> -->
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
                                     <div class="sidebar-widget categories">
@@ -52,19 +58,12 @@
                                             {% for category in all_categories %}
                                            
                                             <li>
-                                                <a href="{% my_url category.name 'filter_category' request.GET.urlencode %}">
+                                                <a href="?filter={{category.name}}">
+                                                    <!-- <a href="?filter_category={{category.name}}"> -->
                                                     <i class="ri-checkbox-line"></i>
                                                     {{category.name}}
                                                 </a>
                                             </li>
-
-
-                                            <!-- <li>
-                                                <a href="?filter_category={{category.name}}">
-                                                    <i class="ri-checkbox-line"></i>
-                                                    {{category.name}}
-                                                </a>
-                                            </li> -->
                                             {% endfor %}
                                            
                                         
@@ -78,7 +77,8 @@
                                             <ul class="list-style">
                                                 {% for tag in all_tags %}
                                                 <li>
-                                                    <li><a href="?filter_tag={{tag.name}}">{{tag.name}}</a></li>
+                                                    <!-- <li><a href="{% my_url tag.name 'filter' request.GET.urlencode %}">{{tag.name}}</a></li> -->
+                                                    <li><a href="?filter={{tag.name}}">{{tag.name}}</a></li>
                                                 </li>
                                                 {% endfor %}
                                                
@@ -87,30 +87,7 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <!-- <div class="sidebar-widget new-product box">
-                                        <h4>Popular Products</h4>
-                                        <div class="new-product-wrap">
-                                            <div class="new-product-item">
-                                                <div class="new-product-img">
-                                                    <img src="{% static 'assets/img/product/product-thumb-1.jpg' %}" alt="Iamge">
-                                                </div>
-                                                <div class="new-product-info">
-                                                    <h6><a href={% url 'product_detail' %}>Cannabis Serum</a></h6>
-                                                    <span>$128.00</span>
-                                                    <span class="discount">$140</span>
-                                                </div>
-                                            </div>
-                                            <div class="new-product-item">
-                                                <div class="new-product-img">
-                                                    <img src="{% static 'assets/img/product/product-thumb-3.jpg' %}" alt="Iamge">
-                                                </div>
-                                                <div class="new-product-info">
-                                                    <h6><a href={% url 'product_detail' %}>MSI Facewash</a></h6>
-                                                    <span>$122.00</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> -->
+                                 
                                 </div>
                             </div>
                             <div class="col-xl-8 col-lg-12 order-xl-2 order-lg-1 order-md-1 order-1">
@@ -118,22 +95,24 @@
                                     <div class="row align-items-center">
                                         <div class="col-md-7">
                                             <div class="product-result">
-                                                <p>Showing 1-10 of 20 Results</p>
+                                                <p>Showing {{ all_products.paginator.per_page  }} of {{all_products.paginator.count}} Results</p>
                                             </div>
                                         </div>
                                         <div class="col-md-5">
                                             <div class="filter-item-cat">
                                                 <select>
                                                     <option value="1">Default Sorting</option>
-                                                    <option value="2">Sort By Most Popular</option>
-                                                    <option value="3">Sort By High To Low</option>
-                                                    <option value="4">Sort By Low To High</option>
+                                                    <option value="2">Sort By High To Low</option>
+                                                    <option value="3">Sort By Low To High</option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
+                                    
+                                    
+                                    {% if all_products.paginator.count > 0 %}
                                     {% for product in all_products %}
                                     <div class="col-xxl-4 col-xl-6 col-lg-4 col-md-6">
                                         <div class="product-card style6">
@@ -156,13 +135,33 @@
                                             </div>
                                         </div>
                                     </div>
-                                                {% endfor %}
-                                  
-                                 
+                                    {% endfor %}
+                                    {% else %}
+
+                                     <!-- Error  Section start -->
+                                    <div class="error-wrap ptb-100">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-lg-8 offset-lg-2">
+                                                    <div class="error-content">
+                                                        <img src="{% static 'assets/img/404.png' %}" alt="Image">
+                                                        <h2>Oops! Items Found</h2>
+                                                        <p>Items you looked for may be temporarily unavailable.</p>
+                                                        <a href={% url 'shop' %} class="btn style1">Clear Filters</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Error  Section end -->
+
+                                    {%  endif %}
+                                   
+                                            
                                </div>
                                 <ul class="page-nav list-style mt-10">
                                     {% if  all_products.has_previous %}
-                                    <li><a href="?page={{all_products.previous_page_number}}"><i class="ri-arrow-left-s-line"></i></a></li>
+                                    <li><a href="{% my_url all_products.previous_page_number 'page' request.GET.urlencode %}"><i class="ri-arrow-left-s-line"></i></a></li>
                                     {% else %}
                                     <li><a href="#"><i class="ri-arrow-left-s-line"></i></a></li>
                                     {% endif %}
@@ -172,7 +171,7 @@
                                     
                                         {%  if all_products.number == i%}
 
-                                          <li><a class="active" href="{% my_url i 'page' request.GET.urlencode %}">{{i}}</a></li>
+                                          <li><a class="active" href="#">{{i}}</a></li>
                                         {% else %}
                                         <li><a href="{% my_url i 'page' request.GET.urlencode %}">{{i}}</a></li>
                                           <!-- <li><a href="?page={{i}}">{{i}}</a></li> -->
@@ -182,9 +181,10 @@
                                     {% endfor %}
 
                                     {% if  all_products.has_next %}
-                                    <li><a href="?page={{all_products.next_page_number}}"><i class="ri-arrow-right-s-line"></i></a></li>
+                                    <!-- <li><a href="?page={{all_products.next_page_number}}"><i class="ri-arrow-right-s-line"></i></a></li> -->
+                                    <li><a href="{% my_url all_products.next_page_number 'page' request.GET.urlencode %}"><i class="ri-arrow-right-s-line"></i></a></li>
                                     {% else %}
-                                    <li><a href=""><i class="ri-arrow-right-s-line"></i></a></li>
+                                    <li><a href="#"><i class="ri-arrow-right-s-line"></i></a></li>
                                     {% endif %}
                                     
                                     
