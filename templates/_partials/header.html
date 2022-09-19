@@ -50,10 +50,13 @@
                         <div class="option-item">
                             <a href={% url 'login' %} class="btn style1">Login Now</a>
                         </div>
-                        <div class="search-area">
-                            <input type="search" placeholder="Search Here..">
-                            <button type="submit"><i class="ri-search-line"></i></button>
-                        </div>
+                        <form action={% url 'search' %}  method="post">
+                            {%csrf_token%}
+                            <div class="search-area">
+                                <input type="search" required name="search_term" placeholder="Search Here..">
+                                <button type="submit"><i class="ri-search-line"></i></button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </nav>
@@ -63,10 +66,14 @@
                 <div class="mobile-menu d-lg-none">
                     <a href="javascript:void(0)"><i class="ri-menu-line"></i></a>
                 </div>
-                <div class="search-area">
-                    <input type="search" placeholder="Search Here..">
-                    <button type="submit"><i class="ri-search-line"></i></button>
-                </div>
+                <form action={% url 'search' %}  method="post">
+                    {%csrf_token%}
+                    <div class="search-area">
+                        <input type="search" required name="search_term" placeholder="Search Here..">
+                        <button type="submit"><i class="ri-search-line"></i></button>
+                    </div>
+                </form>
+                
             </div>
         </div>
     </div>

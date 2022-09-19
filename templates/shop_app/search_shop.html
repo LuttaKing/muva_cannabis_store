@@ -109,7 +109,6 @@
                                             <div class="filter-item-cat">
                                                 <select>
                                                     <option value="1">Default Sorting</option>
-                                                   
                                                 </select>
                                             </div>
                                         </div>
@@ -167,7 +166,7 @@
                                </div>
                                 <ul class="page-nav list-style mt-10">
                                     {% if  all_products.has_previous %}
-                                    <li><a href="{% my_url all_products.previous_page_number 'page' request.GET.urlencode %}"><i class="ri-arrow-left-s-line"></i></a></li>
+                                    <li><a href="{% my_url all_products.previous_page_number 'page' request.POST.urlencode %}"><i class="ri-arrow-left-s-line"></i></a></li>
                                     {% else %}
                                     <li><a href="#"><i class="ri-arrow-left-s-line"></i></a></li>
                                     {% endif %}
@@ -179,7 +178,7 @@
 
                                           <li><a class="active" href="#">{{i}}</a></li>
                                         {% else %}
-                                        <li><a href="{% my_url i 'page' request.GET.urlencode %}">{{i}}</a></li>
+                                        <li><a href="{% my_url i 'page' request.POST.urlencode %}">{{i}}</a></li>
                                           <!-- <li><a href="?page={{i}}">{{i}}</a></li> -->
                                         {% endif %}
 
@@ -188,7 +187,7 @@
 
                                     {% if  all_products.has_next %}
                                     <!-- <li><a href="?page={{all_products.next_page_number}}"><i class="ri-arrow-right-s-line"></i></a></li> -->
-                                    <li><a href="{% my_url all_products.next_page_number 'page' request.GET.urlencode %}"><i class="ri-arrow-right-s-line"></i></a></li>
+                                    <li><a href="{% my_url all_products.next_page_number 'page' request.POST.urlencode %}"><i class="ri-arrow-right-s-line"></i></a></li>
                                     {% else %}
                                     <li><a href="#"><i class="ri-arrow-right-s-line"></i></a></li>
                                     {% endif %}
