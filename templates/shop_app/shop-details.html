@@ -36,7 +36,7 @@
                                     <div class="swiper-container single-product-slider">
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide single-product-item">
-                                                <img src="{{product.product_image.url}}" />
+                                                <img src="https://static.djangoproject.com/img/fundraising-heart.cd6bb84ffd33.svg" />
                                             </div>
                                             <!-- <div class="swiper-slide single-product-item">
                                                 <img src="{% static 'assets/img/product/single-product-2.jpg' %}" />
@@ -48,8 +48,8 @@
                                                 <img src="{% static 'assets/img/product/single-product-4.jpg' %}" />
                                             </div> -->
                                         </div>
-                                        <div class="swiper-button-next"><i class="ri-arrow-right-s-line"></i></div>
-                                        <div class="swiper-button-prev"><i class="ri-arrow-left-s-line"></i></div>
+                                        <!-- <div class="swiper-button-next"><i class="ri-arrow-right-s-line"></i></div>
+                                        <div class="swiper-button-prev"><i class="ri-arrow-left-s-line"></i></div> -->
                                     </div>
                                     <!-- <div thumbsSlider="" class="swiper-container single-product-thumbs">
                                         <div class="swiper-wrapper">
@@ -181,7 +181,12 @@
                             <div class="col-md-8">
                                 <div class="section-title style1">
                                     <span><img src="{% static 'assets/img/section-img.png' %}" alt="Image">Our Shop</span>
+                                    {% if related_products %}
                                     <h2>Related Products</h2>
+                                    {% else %}
+                                    <h2>No Related Products</h2>
+                                    {% endif %}
+                                    
                                 </div>
                             </div>
                             <div class="col-md-4 text-md-end sm-none">
@@ -189,19 +194,33 @@
                             </div>
                         </div>
                         <div class="row justify-content-center">
-                            <div class="col-xl-4 col-lg-6 col-md-6">
+                            {% if related_products %}
+
+                                {% for product in related_products %}
+                                <div class="col-xl-4 col-lg-6 col-md-6">
                                     <div class="product-card style2">
                                         <div class="product-img">
-                                            <img src="{% static 'assets/img/product/product-1.jpg' %}" alt="Image">
+                                            <img src="https://static.djangoproject.com/img/fundraising-heart.cd6bb84ffd33.svg" alt="Image">
                                             <button type="button" class="btn style2 add-cart">Add To Cart</button>
                                         </div>
                                         <div class="product-info">
-                                            <h3><a href={% url 'home' %}>Cannabis Oil</a>
+                                            <h3><a href={% url 'product_detail' product.id %}>{{product.name}}</a>
                                             </h3>
-                                            <p class="price">$89.00 <span class="discount">$120.00</span></p>
+                                            <p class="price">${{product.price}} <span class="discount">$0.00</span></p>
                                         </div>
                                     </div>
                             </div>
+
+                                {% endfor %}
+
+                           
+                            {% else %}
+
+                            
+                                <a href={% url 'shop' %} class="btn style2"><h4>Keep shopping</h4></a>
+                           
+                            {% endif %}
+                          
                          
                        
                         </div>

@@ -1,4 +1,5 @@
 
+from unicodedata import category
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from .models import Product
@@ -11,10 +12,14 @@ def about(request):
 
     
 def product_detail(request,id):
+
     product = get_object_or_404(Product,pk=id)
-    # for i in product.category.all():
-    #     print(i.name)
-    context = {'product':product}
+    category_ID = None
+    for category in product.category.all():
+        category_ID=category.id
+    related_products = Product.objects.exclude(id=product.id).filter(category__id=category_ID)[:3]
+    print(related_products)
+    context = {'product':product, 'related_products': related_products,}
     return render(request,'shop_app/shop-details.html',context)
 
 def cart(request):
