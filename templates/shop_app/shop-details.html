@@ -122,7 +122,7 @@
                                                 </span>
                                             </div>
                                         </div>
-                                        <a href={% url 'cart' %} class="btn style1 add-to-cart">Add To Cart</a>
+                                        <a href={% url 'add_to_cart' product.id %} class="btn style1 add-to-cart">Add To Cart</a>
                                     </div>
                                 </div>
                             </div>
@@ -201,7 +201,8 @@
                                     <div class="product-card style2">
                                         <div class="product-img">
                                             <img src="https://static.djangoproject.com/img/fundraising-heart.cd6bb84ffd33.svg" alt="Image">
-                                            <button type="button" class="btn style2 add-cart">Add To Cart</button>
+                                            <a href={% url 'add_to_cart' product.id %}> <button type="button" class="btn style2 add-cart">Add To Cart</button> </a>
+                                           
                                         </div>
                                         <div class="product-info">
                                             <h3><a href={% url 'product_detail' product.id %}>{{product.name}}</a>

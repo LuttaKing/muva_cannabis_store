@@ -1,5 +1,6 @@
 from django.db import models
 from random import randint
+from auth_app.models import User
 
 
 class Category(models.Model):
@@ -30,5 +31,20 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+class Cart(models.Model):
+    owner = models.ForeignKey(User, verbose_name="Owner", on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, verbose_name="Product", on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField(default=1, verbose_name="Quantity")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Created Date")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="Updated Date")
+
+    def __str__(self):
+        return str(self.owner)
+    
+    # Creating Model Property to calculate Quantity x Price
+    @property
+    def total_price(self):
+        return self.quantity * self.product.price
 
 

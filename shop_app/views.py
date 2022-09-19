@@ -1,5 +1,4 @@
 
-from unicodedata import category
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from .models import Product
@@ -22,8 +21,7 @@ def product_detail(request,id):
     context = {'product':product, 'related_products': related_products,}
     return render(request,'shop_app/shop-details.html',context)
 
-def cart(request):
-    return render(request,'shop_app/cart.html')
+
 
 def checkout(request):
     return render(request,'shop_app/checkout.html')
