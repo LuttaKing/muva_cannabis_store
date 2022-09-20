@@ -36,10 +36,16 @@
                         <li class="nav-item">
                             <a href={% url 'contact' %} class="nav-link">Contact</a>
                         </li>
-                        
+                        {% if request.user %}
+                        <li class="nav-item d-lg-none">
+                            <a href={% url 'logout_user' %} class="btn style1 w-block w-100">Log Out</a>
+                        </li>
+                        {% else %}
                         <li class="nav-item d-lg-none">
                             <a href={% url 'login' %} class="btn style1 w-block w-100">Login Now</a>
                         </li>
+
+                        {% endif %}
                     </ul>
                     <div class="other-options md-none">
                         <div class="option-item">
@@ -55,9 +61,17 @@
 
                             {% endif %}
                         </div>
+                        {% if request.user %}
                         <div class="option-item">
-                            <a href={% url 'login' %} class="btn style1">Login Now</a>
+                            <a href={% url 'logout_user' %} class="btn style1">Log Out</a>
                         </div>
+                        {% else %}
+                        <div class="option-item">
+                            <a href={% url 'login' %} class="btn style1">Login Now </a>
+                        </div>
+
+                        {% endif %}
+                       
                         <form action={% url 'search' %}  method="post">
                             {%csrf_token%}
                             <div class="search-area">

@@ -1,0 +1,30 @@
+{% extends '_partials/base.html'%}
+{% load static %}
+
+{% block content %}
+            <!-- Content Wrapper Start -->
+            <div class="content-wrapper error">
+                {% include '_partials/messages.html'%}
+
+
+                <!-- Error  Section start -->
+                <div class="error-wrap ptb-100">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 offset-lg-2">
+                                <div class="error-content">
+                                    <img src="{% static 'assets/img/404.png' %}" alt="Image">
+                                    <h2>Hurrah! Your order has been placed</h2>
+                                    <p>We are processing your order and it will be delivered asap.Feel free to message us on Whatsapp or Give us a call.</p>
+                                    <a href={% url 'home' %} class="btn style1">Call Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Error  Section end -->
+
+            </div>
+            <!-- Content Wrapper End -->
+
+            {% endblock content %}

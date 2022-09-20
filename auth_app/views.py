@@ -66,6 +66,7 @@ def login_user(request):
     return render(request,'auth_app/login.html')
 
 def logout_user(request):
+    print('logged out')
     logout(request)
     messages.add_message(request,messages.SUCCESS, "Logged out successfully")
     return redirect(reverse('login'))

@@ -16,7 +16,8 @@ urlpatterns=[
     path('minus-cart/<int:cart_id>/', cart_view.minus_cart, name="minus-cart"),
 
 
-    path('checkout/',views.checkout, name='checkout'),
+    path('checkout/<shipping_amount>/<subtotal_amount>/',views.checkout, name='checkout'),
+    path('order',views.order, name='order'),
     path('contact/',views.contact_us_and_store_location, name='contact'),
     path('terms/',views.terms_and_privacy, name='terms'),
 ]
