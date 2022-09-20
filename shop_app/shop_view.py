@@ -10,16 +10,6 @@ all_products = Product.objects.all().order_by("id")
 def filter_products(request):
     page = request.GET.get('page', 1)
 
-    # if request.method == 'POST':
-    #     search_term = request.POST.get("search_term")
-        
-    #     searched_products=all_products.filter(name__contains=search_term,)
-    #     print(searched_products)
-    #     paginato = Paginator(searched_products, 1)
-    #     productx=paginato.get_page(page)
-    #     return productx
-    
-
     if request.GET.get('filter'):
         for item in list(chain(all_categories,all_tags)):
             if request.GET.get('filter')==item.name:
