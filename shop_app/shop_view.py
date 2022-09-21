@@ -18,12 +18,12 @@ def filter_products(request):
                 else:
                     filtered_products = all_products.filter(tags__id=item.pk).order_by("id")
                 
-                paginato = Paginator(filtered_products, 1)
+                paginato = Paginator(filtered_products, 3)
                 productx=paginato.get_page(page)
 
                 return productx
 
-    paginator = Paginator(all_products, 1)
+    paginator = Paginator(all_products, 3)
     products=paginator.get_page(page)
     print(products.paginator.per_page)
 
@@ -60,7 +60,7 @@ def search(request):
     if request.GET.get("search_term"):
         search_term = request.GET.get("search_term")
         searched_products=all_products.filter(name__contains=search_term,)
-        paginato = Paginator(searched_products, 1)
+        paginato = Paginator(searched_products, 3)
         productx=paginato.get_page(page)
         context = {  
                 'all_tags':all_tags,
