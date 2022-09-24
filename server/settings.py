@@ -12,7 +12,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = ['https://web-production-ed6e.up.railway.app/']
+CSRF_TRUSTED_ORIGINS = ['https://web-production-ed6e.up.railway.app']
 
 
 AUTH_USER_MODEL = "auth_app.user"
