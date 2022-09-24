@@ -36,7 +36,7 @@
                         <li class="nav-item">
                             <a href={% url 'contact' %} class="nav-link">Contact</a>
                         </li>
-                        {% if request.user %}
+                        {% if request.user.is_authenticated %}
                         <li class="nav-item d-lg-none">
                             <a href={% url 'logout_user' %} class="btn style1 w-block w-100">Log Out</a>
                         </li>
@@ -52,7 +52,7 @@
                             <button class="searchbtn"><i class="ri-search-line"></i></button>
                         </div>
                         <div class="option-item">
-                            {% if request.user %}
+                            {% if request.user.is_authenticated %}
                             
                          
                             <a class="shopcart-btn" href={% url 'cart' %}><i class="flaticon-bag"></i> <span>{{request.user.cart_set.count}}</span></a>
@@ -61,7 +61,7 @@
 
                             {% endif %}
                         </div>
-                        {% if request.user %}
+                        {% if request.user.is_authenticated %}
                         <div class="option-item">
                             <a href={% url 'logout_user' %} class="btn style1">Log Out</a>
                         </div>
@@ -84,7 +84,7 @@
             </nav>
             <div class="mobile-bar-wrap d-lg-none">
                 <button class="searchbtn"><i class="ri-search-line"></i></button>
-                {% if request.user %}
+                {% if request.user.is_authenticated %}
                             
                          
                 <a class="shopcart-btn" href={% url 'cart' %}><i class="flaticon-bag"></i> <span>{{request.user.cart_set.count}}</span></a>

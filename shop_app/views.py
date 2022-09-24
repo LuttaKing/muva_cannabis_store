@@ -7,6 +7,9 @@ from django.contrib.auth.decorators import login_required
 
 
 def home(request):
+    if request.user.is_authenticated:
+        print(request.user)
+
     return render(request,'shop_app/index.html')
 
 def about(request):
