@@ -23,7 +23,7 @@ def filter_products(request):
 
                 return productx
 
-    paginator = Paginator(all_products, 3)
+    paginator = Paginator(all_products, 6)
     products=paginator.get_page(page)
     print(products.paginator.per_page)
 

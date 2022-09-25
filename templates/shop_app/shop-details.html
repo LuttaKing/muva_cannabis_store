@@ -36,7 +36,7 @@
                                     <div class="swiper-container single-product-slider">
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide single-product-item">
-                                                <img src="https://static.djangoproject.com/img/fundraising-heart.cd6bb84ffd33.svg" />
+                                                <img src={{ product.product_image.url }} />
                                             </div>
                                             <!-- <div class="swiper-slide single-product-item">
                                                 <img src="{% static 'assets/img/product/single-product-2.jpg' %}" />
@@ -200,7 +200,7 @@
                                 <div class="col-xl-4 col-lg-6 col-md-6">
                                     <div class="product-card style2">
                                         <div class="product-img">
-                                            <img src="https://static.djangoproject.com/img/fundraising-heart.cd6bb84ffd33.svg" alt="Image">
+                                            <img src={{ product.product_image.url }} alt="Image">
                                             <a href={% url 'add_to_cart' product.id %}> <button type="button" class="btn style2 add-cart">Add To Cart</button> </a>
                                            
                                         </div>
